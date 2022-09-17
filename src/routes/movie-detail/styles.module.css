@@ -1,0 +1,71 @@
+.timings{
+    margin-top: 10px;
+    margin-bottom: 40px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.time{
+    padding: 5px;
+    width: 50px;
+    border: 1px solid red;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 800px; */
+    border-bottom: 2px solid rgb(230, 230, 230);
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moviebanner{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+}
+
+.moviedetails{
+    margin-left: 40px;
+}
+
+.tile{
+    margin: 30px;
+}
+
+.bookBtn{
+    background-color: blueviolet;
+    color: white;
+    font-size: 26px;
+    border: 1px solid rgb(209, 209, 209);
+    padding: 15px;
+    float: right;
+    border-radius: 15px;
+}
+
+.bookBtn:hover{
+    background-color: rgb(75, 27, 121);
+}
+
+.movie_name{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.banner{
+    width: 250px;
+}
