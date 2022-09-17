@@ -1,10 +1,13 @@
 import Overlay from '../overlay/overlay'
 import styles from './styles.module.css'
 import {ReactComponent as CloseIcon } from '../../assets/close.svg'
+import { useNavigate } from "react-router-dom";
 const MovieSelectOverlay = (props) => {
+    const navigate = useNavigate();
     const movie = props.movie
     const viewingTypeHandler = (language,type) =>{
-        console.log({language,type})
+        // console.log({language,type})
+        navigate(`./booking/${language}/${type}`)
     }
     return (
         <Overlay>
