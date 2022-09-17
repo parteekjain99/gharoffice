@@ -48,10 +48,14 @@ const ViewTheatres = () => {
     const { movieIndex, language, viewingType } = useParams()
     const movie = movie_list[movieIndex]
     const [selectedData, setSelectedData] = useState(null)
+    const [selectSeatsFlag, setSelectSeatsFlag] = useState(false)
     console.log(selectedData)
     const selectedTheatre = (theatre_id,time_index)=>{
         setSelectedData({theatre_id,time_index})
         toggleOverlay()
+    }
+    if(selectSeatsFlag){
+        return <SelectSeats data={selectedData}/>
     }
     const [openOverlay,setOpenOverlay] = useState(false)
     const toggleOverlay=() =>{
@@ -84,5 +88,15 @@ const ViewTheatres = () => {
         </div>
     )
 }
+
+const SelectSeats = (props)=>{
+    const { movieIndex, language, viewingType } = useParams()
+    const {theatre_id,time_index,number} = props.data
+    return (
+        <></>
+    )
+}
+
+
 
 export default MovieDetail
