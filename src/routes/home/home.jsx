@@ -4,9 +4,10 @@ import styles from './styles.module.css'
 import MovieTile from '../../components/movie-tile/movie-tile'
 import MovieSelectOverlay from '../../components/movie-select-overlay/movie-select'
 const Home = () => {
-    console.log(theatre_list)
+    
     return (
         <div className={styles.home}>
+            <p className={styles.subtitle}>Released Movies</p>
             <div className={styles.movie_list}>
                 {movie_list.map((movie, index) => {
                     return (

@@ -5,7 +5,7 @@ import Home from '../home/home'
 import { useState } from 'react'
 import { movie_list, theatre_list } from '../../structure'
 import MovieSelectOveraly from '../../components/movie-select-overlay/movie-select'
-
+import SelectPersonOverlay from '../../components/select-no-persons/selectPersons'
 const MovieDetail = (props) => {
     return (
         <Routes>
@@ -47,20 +47,30 @@ const MovieDeatiled = (props) => {
 const ViewTheatres = () => {
     const { movieIndex, language, viewingType } = useParams()
     const movie = movie_list[movieIndex]
+    const [selectedData, setSelectedData] = useState(null)
+    console.log(selectedData)
+    const selectedTheatre = (theatre_id,time_index)=>{
+        setSelectedData({theatre_id,time_index})
+        toggleOverlay()
+    }
+    const [openOverlay,setOpenOverlay] = useState(false)
+    const toggleOverlay=() =>{
+        setOpenOverlay(!openOverlay)
+    }
     const availabilityList = movie["availability"][language][0][viewingType]
     const [theatreList, setTheatreList] = useState(availabilityList[0].theatres)
     return (
         <div>
             {/* date selection */}
-            {theatreList.map(theatre => {
+            {theatreList.map((theatre,index) => {
                 return (
-                    <div className={styles.card}>
+                    <div className={styles.card} key={index}>
                         <div className={styles.details}>
                             <p>{theatre_list.find(theatre1 => theatre1["id"] == theatre["id"]).theatre_name}</p>
                             <div className={styles.timings}>
                                 {theatre.timings.map((time, index) => {
                                     return (
-                                        <div className={styles.time}>
+                                        <div className={styles.time} onClick={()=>selectedTheatre(theatre["id"],index)} key={index}>
                                             {time}
                                         </div>
                                     )
@@ -70,6 +80,7 @@ const ViewTheatres = () => {
                     </div>
                 )
             })}
+            {openOverlay?<SelectPersonOverlay onClick={toggleOverlay} setSelectedData={setSelectedData}/>:<></>}
         </div>
     )
 }

@@ -6,9 +6,11 @@
 }
 
 .banner{
-    width: 200px;;
+    width: 200px;
+    border-radius: 8px;
 }
 
 .movie_name{
     text-align: center;
+    margin-top: 5px;
 }

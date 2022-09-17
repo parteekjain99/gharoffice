@@ -1,0 +1,46 @@
+.card{
+    text-align: center;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 300px;
+    box-sizing: content-box;
+    background-color: aliceblue;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.peoples{
+    display: flex;
+    justify-content: space-between;
+}
+
+.peoples > p{
+    width:30px;
+    border: 2px solid black;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.peoples > p:hover{
+    background-color: black;
+    color: white;
+    width:30px;
+    border: 2px solid black;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.closeIcon{
+    position: absolute;
+    right:10px;
+    width: 25px;
+    float: right;
+}

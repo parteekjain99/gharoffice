@@ -48,7 +48,7 @@
 }
 
 .bookBtn{
-    background-color: blueviolet;
+    background-color: rgb(196, 28, 37);
     color: white;
     font-size: 26px;
     border: 1px solid rgb(209, 209, 209);
@@ -58,7 +58,7 @@
 }
 
 .bookBtn:hover{
-    background-color: rgb(75, 27, 121);
+    background-color: rgb(129, 21, 27);
 }
 
 .movie_name{
