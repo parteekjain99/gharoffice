@@ -8,6 +8,7 @@ const SelectPersonOverlay = (props) => {
             return {...oldData,number}
         })
         props.onClick()
+        props.setSelectSeatsFlag(true)
     }
     const people = [1, 2, 3, 4, 5, 6]
     return (

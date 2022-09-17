@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { movie_list, theatre_list } from '../../structure'
 import MovieSelectOveraly from '../../components/movie-select-overlay/movie-select'
 import SelectPersonOverlay from '../../components/select-no-persons/selectPersons'
+import Overlay from '../../components/overlay/overlay'
 const MovieDetail = (props) => {
     return (
         <Routes>
@@ -50,19 +51,16 @@ const ViewTheatres = () => {
     const [selectedData, setSelectedData] = useState(null)
     const [selectSeatsFlag, setSelectSeatsFlag] = useState(false)
     console.log(selectedData)
+    const [openSelectPersonOverlay,setOpenSelectPersonOverlay] = useState(false)
+    const availabilityList = movie["availability"][language][0][viewingType]
+    const [theatreList, setTheatreList] = useState(availabilityList[0].theatres)
     const selectedTheatre = (theatre_id,time_index)=>{
         setSelectedData({theatre_id,time_index})
         toggleOverlay()
     }
-    if(selectSeatsFlag){
-        return <SelectSeats data={selectedData}/>
-    }
-    const [openOverlay,setOpenOverlay] = useState(false)
     const toggleOverlay=() =>{
-        setOpenOverlay(!openOverlay)
+        setOpenSelectPersonOverlay(!openSelectPersonOverlay)
     }
-    const availabilityList = movie["availability"][language][0][viewingType]
-    const [theatreList, setTheatreList] = useState(availabilityList[0].theatres)
     return (
         <div>
             {/* date selection */}
@@ -84,16 +82,22 @@ const ViewTheatres = () => {
                     </div>
                 )
             })}
-            {openOverlay?<SelectPersonOverlay onClick={toggleOverlay} setSelectedData={setSelectedData}/>:<></>}
+            {openSelectPersonOverlay?<SelectPersonOverlay onClick={toggleOverlay} setSelectedData={setSelectedData} setSelectSeatsFlag={setSelectSeatsFlag}/>:<></>}
+            {selectSeatsFlag?<SelectSeats data={selectedData} theatreList={theatreList}/>:<></>}
         </div>
     )
 }
 
 const SelectSeats = (props)=>{
     const { movieIndex, language, viewingType } = useParams()
-    const {theatre_id,time_index,number} = props.data
+    const {theatre_id,time_index,number,theatreList} = props.data
     return (
-        <></>
+        <Overlay>
+            <div className={styles.seatCard}>
+                sjdkadsklasd
+                askda;klsd
+            </div>
+        </Overlay>
     )
 }
 
