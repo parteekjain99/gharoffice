@@ -71,11 +71,58 @@
 }
 
 .seatCard{
+    padding: 10px;
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.884);
+    background-color: rgb(247, 247, 247);
+}
+
+.dates{
+    display: flex;
+    flex-direction: row;
+}
+
+.date{
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(1, 1, 7);
+    color: white;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.seats{
+    margin-left: 10px;
+    float: right;
+}
+
+.closeicon{
+    position: absolute;
+    top: 10px;
+    right:10px;
+    width: 25px;
+    float: right;
+    cursor: pointer;
+}
+
+.chair{
+    margin: 0 5px;
+}
+
+.chair:hover{
+    background-color: rgb(99, 29, 64);
+}
+
+.selected{
+    background-color: rgb(43, 13, 28);
 }
