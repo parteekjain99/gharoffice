@@ -10,7 +10,7 @@ import Overlay from '../../components/overlay/overlay'
 
 import { ReactComponent as Selected } from '../../assets/selected.svg'
 import { ReactComponent as Empty } from '../../assets/empty.svg'
-import { ReactComponent as Occupied } from '../../assets/occupied.svg'
+import { ReactComponent as Occupied } from '../../assets/selected.svg'
 import { ReactComponent as CloseIcon } from '../../assets/close.svg'
 
 const MovieDetail = (props) => {
